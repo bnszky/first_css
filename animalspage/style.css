@@ -1,0 +1,156 @@
+body{
+	margin:0;
+	padding:0;
+	background: linear-gradient(90deg, rgba(56,124,66,1) 35%, rgba(11,228,149,1) 70%);	
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	position: relative;
+	padding: 25px;
+	background: url("dark-honeycomb.png"); /* This pattern is downloaded from www.subtlepatterns.com - Made by Federica Pelzel*/
+	width: 70vw;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.container .header {
+	width: 100%;
+	position:relative;
+	color: white;
+	opacity: 0.7;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-size: 5vw;
+	text-align:center;
+}
+
+.container h2:before {
+	content: attr(data-text);
+	position:absolute;
+	overflow:hidden;
+	width:100%;
+	height:0%;
+	top:30%;
+	left:0;
+	transition:2s;
+	color: #cf9a44;
+}
+
+.container .header:hover h2:before{
+	transition:4s;
+	height:100%;
+}
+
+.container .photo {
+	z-index: 1;
+	position:relative;
+	width: 250px;
+	height: 300px;
+	text-align:center;
+	margin: 15px;
+	color: white;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border: 3px solid grey;
+	transition:2s;
+}
+
+.container .photo:nth-child(2):hover{
+	box-shadow: 0px 0px 40px 10px #ccb104;
+	color: #ccb104;
+	border: 3px solid #989c70;
+}
+
+.container .photo:nth-child(3):hover{
+	box-shadow: 0px 0px 40px 10px #6e4c08;
+	color: #6e4c08;
+	border: 3px solid #f5e4c4;
+}
+
+.container .photo:nth-child(4):hover{
+	box-shadow: 0px 0px 40px 10px rgba(32,65,199,1);
+	color: #1a6aa3;
+	border: 3px solid #7534c9;
+}
+
+
+
+.container .photo:nth-child(5):hover{
+	box-shadow: 0px 0px 40px 10px #773e78;
+	color: #773e78;
+	border: 3px solid #e164e3;
+}
+
+.container .photo:nth-child(6):hover{
+	box-shadow: 0px 0px 40px 10px #e8a12e;
+	color: #e8a12e;
+	border: 3px solid #eb6607;
+}
+
+.container .photo:nth-child(7):hover{
+	box-shadow: 0px 0px 40px 10px #d1cdc7;
+	color: #d1cdc7;
+	border: 3px solid #b5a777;
+}
+
+
+
+.container .photo:nth-child(8):hover{
+	box-shadow: 0px 0px 40px 10px #9ca19c;
+	color: #9ca19c;
+	border: 3px solid #FFF;
+}
+
+.container .photo:nth-child(9):hover{
+	box-shadow: 0px 0px 40px 10px #4dbbff;
+	color: #4dbbff;
+	border: 3px solid #64d6e3;
+}
+
+.container .photo:last-child:hover{
+	box-shadow: 0px 0px 40px 10px #26f02a;
+	color: #26f02a;
+	border: 3px solid #129915;
+}
+
+
+.container .photo:before {
+	content: "";
+	z-index:-1;
+	position:absolute;
+	top:0;
+	left:0;
+	background:#62696e;
+	opacity:0.4;
+	width:0;
+	height:100%;
+	transition: 2s;
+}
+
+.container .photo:hover:before{
+	width:100%;
+}
+
+.photo .frame{
+	width: 250px;
+	height: 250px;
+	margin-bottom: 15px;
+	overflow:hidden;
+}
+
+.photo .frame img{
+	width: 100%;
+	height: 100%;
+	filter: grayscale(100%);
+	transition: 2s;
+}
+
+.photo:hover img{
+	filter: grayscale(0);
+	transform: scale(1.2);
+}
