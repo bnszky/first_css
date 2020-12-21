@@ -1,0 +1,148 @@
+body{
+	margin:0;
+	display: flex;
+	height: 1000px;
+	width: 100%;
+	background: url("tlo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 0 -200px;
+	color: #FFFFFF;
+	justify-content: center;
+	align-items: center;
+}
+
+.textclock {
+	width:50%;
+	height: 150px;
+	padding-top:15px;
+	position:relative;
+	left:25%;
+	background-color: grey;
+	opacity: 0.7;
+	font-size: 32px;
+	color: white;
+	text-align: center;
+}
+
+.textclock > a{
+	color: #000000;
+	text-decoration:none;
+}
+
+.textclock > a:hover{
+	color:#a1b5ae;
+}
+
+.clock{
+	background: grey;
+opacity:0.9;
+	width:101px;
+	height:101px;
+	border: 3px solid black;
+	border-radius: 50%;
+	top: 50%;
+	transform: scale(6) rotate(180deg);
+}
+
+.clock::before,
+.clock::after{
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	background: rgb(235,155,65);
+background: linear-gradient(90deg, rgba(235,155,65,1) 12%, rgba(227,225,100,1) 84%, rgba(233,233,181,1) 99%);
+	filter: blur(8px);
+	border-radius:50%;
+	z-index: -1;
+	height:100%;
+	width:100%;
+}
+
+.butt{
+	position:fixed;
+	bottom:10px;
+	width:100%;
+	transform: translateY(100%);
+	transition: 0.3s transform ease-in-out;
+}
+
+.butt img{
+	position:relative;
+	left:40%;
+	bottom: 50px;
+}
+
+.butt:hover{
+	cursor:pointer;
+	transform: translateY(0%);
+}
+
+
+.clock #hours{
+	border: 3px solid black;
+	position:absolute;
+	height: 25%;
+	left:48px;
+	top: 50px;
+	border-radius: 4px;
+	
+	transform-origin: top center;
+	animation-name: rotate;
+	animation-iteration-count: infinite;
+	animation-timing-function:linear;
+	animation-duration: 43200s;
+}
+
+.clock #minuts{
+	border: 1px solid black;
+	position:absolute;
+	height: 35%;
+	left:50px;
+	top: 50px;
+	border-radius: 4px;
+	
+	animation-name: rotate;
+	animation-iteration-count: infinite;
+	animation-timing-function:linear;
+	animation-duration: 3600s;
+	transform-origin: top center;
+}
+
+.clock #seconds{
+	border: 1px solid red;
+	position:absolute;
+	height: 40%;
+	left:50px;
+	top: 50px;
+	border-radius: 1px;
+	
+	animation-name: rotate;
+	animation-iteration-count: infinite;
+	animation-timing-function:linear;
+	animation-duration: 60s;
+	transform-origin: top center;
+}
+
+@keyframes rotate {
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+.numbers {
+	font-size: 10px;
+	color: black;
+	transform: rotate(180deg);
+	text-decoration: uppercase;
+}
+
+#n1 { position:absolute; left:48px; top: 0px;}
+#n2 { position:absolute; left:93px; top:44px;}
+#n3 { position:absolute; left:46px; top:87px;}
+#n4 { position:absolute; top:45px; left:3px;}

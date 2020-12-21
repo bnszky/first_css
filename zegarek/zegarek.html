@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+	<meta charset="utf-8" />
+	<title> Clock by MB </title>
+	<meta name="description"  />
+	<meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1"/>
+	
+	<link rel="stylesheet" href="styl.css" type="text/css"/>
+	
+</head>
+
+<body>
+
+<div class="clock">
+<span class="numbers" id="n1">6</span>
+<span class="numbers" id="n2">9</span>
+<span class="numbers" id="n3">12</span>
+<span class="numbers" id="n4">3</span>
+<span id="seconds"></span>
+<span id="minuts"></span>
+<span id="hours"></span>
+</div> 
+<div class="butt">
+<div class = "textclock"> 
+<img src="up.png"></img>
+Zegarek wykonany przez <a href="https://www.poradnia.pl/ziemniaki-zrodlo-witamin-i-mineralow.html" target="_blank">MichalB</a>. Czas CEST (UTC+02:00). </br>
+Dzięki za odwiedziny ;)
+</div>
+</div>
+
+<script> 
+
+var now= new Date();
+var timeOfDay = now.getHours();
+if(timeOfDay>=21) document.body.style.background= 'url("night.jpg")';
+else if(timeOfDay<=7) document.body.style.background= 'url("night.jpg")';
+else document.body.style.background= 'url("day.jpg")';
+var minutes = now.getMinutes() * 60;
+var seconds = now.getSeconds();
+var hours = now.getHours() * 3600;
+console.log(minutes, seconds, hours);
+document.querySelector('#seconds').style.animationDelay = '-' + seconds + 's';
+document.querySelector('#minuts').style.animationDelay = '-' + minutes + 's';
+document.querySelector('#hours').style.animationDelay = '-' + hours + 's';
+
+</script>
+
+</body>
